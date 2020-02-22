@@ -221,14 +221,14 @@ class RandomForest():
     
     def __init__(self, MAX_HEIGHT, NODE_PURITY, INFORMATION_GAIN, features_randomization, number_of_trees, subsample):
         """
-        TODO: initialization of a random forest
+        Initialization of a random forest
         """
         self.subsample = subsample
         self.forest = [DecisionTree(MAX_HEIGHT, NODE_PURITY, INFORMATION_GAIN, features_randomization) for _ in range(number_of_trees)]
 
     def fit(self, X, y):
         """
-        TODO: fit the model to a training set.
+        Fit the model to a training set.
         """
         for tree in self.forest:
             subsample = np.random.choice(len(X), self.subsample)
@@ -238,7 +238,7 @@ class RandomForest():
         
     def predict(self, X):
         """
-        TODO: predict the labels for input data 
+        Predict the labels for input data 
         """
         predictions = []
         for tree in self.forest:
